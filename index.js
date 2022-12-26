@@ -10,7 +10,7 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const router = express.Router();
 const path = require("path");
-
+const cors = require('cors');
 dotenv.config();
 
 mongoose.connect(
@@ -26,7 +26,8 @@ app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
-
+app.use(cors({
+  origin: ['https://react-social.onrender.com']}))
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
