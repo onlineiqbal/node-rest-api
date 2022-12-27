@@ -7,7 +7,7 @@ const bcrypt= require("bcrypt");
 //});
 
 //Register
-router.post("https://node-rest-api-soqw.onrender.com/register", async(req,res)=>{
+router.post("https://node-rest-api-soqw.onrender.com/api/auth/register", async(req,res)=>{
     
     try {
  
